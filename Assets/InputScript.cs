@@ -86,8 +86,27 @@ public class InputScript : MonoBehaviour
             maxTimePerAction -= timeIncrement;
         }
 
-        ChangeText();
         
+        // this code checks if both buttons are using the same piece and reassigns them if so
+        if (Button1 == blueSquare && Button2 == redSquare)
+        {
+            Button2 = Keys[2];
+        }
+        if (Button1 == blueCircle && Button2 == redCircle)
+        {
+            Button2 = Keys[2];
+        }
+        
+        if (Button1 == blueTriangle && Button2 == redTriangle)
+        {
+            Button2 = Keys[2];
+        }
+        
+        if (Button1 == blueStar && Button2 == redStar)
+        {
+            Button2 = Keys[2];
+        }
+        ChangeText();
 
     }
     
