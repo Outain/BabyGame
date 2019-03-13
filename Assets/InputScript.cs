@@ -15,10 +15,12 @@ public class InputScript : MonoBehaviour
     public float maxTimePerAction;
     public float minTimePerAction;
     public float timeIncrement;
+    public int score;
 
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
         Keys = new KeyCode[] {blueSquare, blueCircle, blueTriangle, blueStar,redSquare, redCircle, redTriangle, redStar};
         NewAction();
         timePerAction = maxTimePerAction;
@@ -33,6 +35,7 @@ public class InputScript : MonoBehaviour
 
         if (Input.GetKey(Button1) && Input.GetKey(Button2))
         {
+            score += 100;
             NewAction();
         }
 
@@ -101,5 +104,6 @@ public class InputScript : MonoBehaviour
         GUI.Label(new Rect(10, 10, 1000, 20), actionToDisplay + " " + buttonPressString);
         GUI.Label(new Rect(10, 30, 1000, 20), ""+ timePerAction);
         GUI.Label(new Rect(10, 50, 1000, 20), "Health: "+ health);
+        GUI.Label(new Rect(10, 70, 1000, 20), "Score: "+ score);
     }
 }
