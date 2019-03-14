@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.Experimental.UIElements;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class InputScript : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class InputScript : MonoBehaviour
     public float minTimePerAction;
     public float timeIncrement;
     public int score;
+    public Slider slidey;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +36,8 @@ public class InputScript : MonoBehaviour
     {
         TextToDisplay();
         timePerAction -= Time.deltaTime;
-
+        slidey.maxValue = maxTimePerAction;
+        slidey.value = timePerAction;
         if (Input.GetKey(Button1) && Input.GetKey(Button2))
         {
             score += 100;
@@ -46,6 +50,7 @@ public class InputScript : MonoBehaviour
            
            NewAction();
         }
+        ChangeText();
     }
 
     void TextToDisplay()
@@ -106,7 +111,8 @@ public class InputScript : MonoBehaviour
         {
             Button2 = Keys[2];
         }
-        ChangeText();
+        buttonPressString = "Press " + Button1 + " and " + Button2;
+        
 
     }
     
@@ -209,7 +215,7 @@ public class InputScript : MonoBehaviour
     private void OnGUI()
     {
         GUI.Label(new Rect(10, 10, 1000, 20), actionToDisplay + " " + buttonPressString);
-        GUI.Label(new Rect(10, 30, 1000, 20), ""+ timePerAction);
+        GUI.Label(new Rect(10, 30, 1000, 20), "Time: "+ maxTimePerAction.ToString("F2"));
         GUI.Label(new Rect(10, 50, 1000, 20), "Health: "+ health);
         GUI.Label(new Rect(10, 70, 1000, 20), "Score: "+ score);
         GUI.Label(new Rect(10, 90, 1000, 20), buttonString1 + " " + buttonString2);
