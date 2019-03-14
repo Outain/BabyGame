@@ -20,6 +20,11 @@ public class InputScript : MonoBehaviour
     public float timeIncrement;
     public int score;
     public Slider slidey;
+    public GameObject blueSquareGameObject, blueCircleGameObject, blueTriangleGameObject, blueStarGameObject,redSquareGameObject, 
+            redCircleGameObject, redTriangleGameObject, redStarGameObject;
+
+    public Transform shapePoint1, shapePoint2;
+     GameObject shapeToDestroy1, shapeToDestroy2;
 
     // Start is called before the first frame update
     void Start()
@@ -112,6 +117,7 @@ public class InputScript : MonoBehaviour
             Button2 = Keys[2];
         }
         buttonPressString = "Press " + Button1 + " and " + Button2;
+        UpdateShapes();
         
 
     }
@@ -126,6 +132,114 @@ public class InputScript : MonoBehaviour
             Keys[t] = Keys[r];
             Keys[r] = tmp;
         }
+    }
+
+    void UpdateShapes()
+    {
+        if (shapeToDestroy1 != null)
+        {
+            Destroy(shapeToDestroy1);
+        }
+
+        if (shapeToDestroy2 != null)
+        {
+            Destroy(shapeToDestroy2);
+        }
+
+        if (Button1 == blueSquare)
+        {
+           GameObject shape1 = Instantiate(blueSquareGameObject, shapePoint1);
+           shapeToDestroy1 = shape1;
+        }
+        else if (Button1 == blueCircle)
+        {
+            GameObject shape1 = Instantiate(blueCircleGameObject, shapePoint1);
+            shapeToDestroy1 = shape1;
+        }
+        else if (Button1 == blueTriangle)
+        {
+            GameObject shape1 = Instantiate(blueTriangleGameObject, shapePoint1);
+            shapeToDestroy1 = shape1;
+        }
+       else if (Button1 == blueStar)
+        {
+            GameObject shape1 = Instantiate(blueStarGameObject, shapePoint1);
+            shapeToDestroy1 = shape1;
+        }
+        
+        
+        
+       else if (Button1 == redSquare)
+        {
+            GameObject shape1 = Instantiate(redSquareGameObject, shapePoint1);
+            shapeToDestroy1 = shape1;
+        }
+       else if (Button1 == redCircle)
+        {
+            GameObject shape1 = Instantiate(redCircleGameObject, shapePoint1);
+            shapeToDestroy1 = shape1;
+        }
+       else if (Button1 == redTriangle)
+        {
+            GameObject shape1 = Instantiate(redTriangleGameObject, shapePoint1);
+            shapeToDestroy1 = shape1;
+        }
+       else if (Button1 == redStar)
+        {
+            GameObject shape1 = Instantiate(redStarGameObject, shapePoint1);
+            shapeToDestroy1 = shape1;
+        }
+        
+        
+        
+        
+        
+        
+        
+        if (Button2 == blueSquare)
+        {
+            GameObject shape2 = Instantiate(blueSquareGameObject, shapePoint1);
+            shapeToDestroy2 = shape2;
+        }
+       else if (Button2 == blueCircle)
+        {
+            GameObject shape2 = Instantiate(blueCircleGameObject, shapePoint1);
+            shapeToDestroy2 = shape2;
+        }
+       else if (Button2 == blueTriangle)
+        {
+            GameObject shape2 = Instantiate(blueTriangleGameObject, shapePoint1);
+            shapeToDestroy2 = shape2;
+        }
+       else if (Button2 == blueStar)
+        {
+            GameObject shape2 = Instantiate(blueStarGameObject, shapePoint1);
+            shapeToDestroy2 = shape2;
+        }
+        
+        
+        
+      else  if (Button2 == redSquare)
+        {
+            GameObject shape2 = Instantiate(redSquareGameObject, shapePoint1);
+            shapeToDestroy2 = shape2;
+        }
+      else  if (Button2 == redCircle)
+        {
+            GameObject shape2 = Instantiate(redCircleGameObject, shapePoint1);
+            shapeToDestroy2 = shape2;
+        }
+      else  if (Button2 == redTriangle)
+        {
+            GameObject shape2 = Instantiate(redTriangleGameObject, shapePoint1);
+            shapeToDestroy2 = shape2;
+        }
+     else   if (Button2 == redStar)
+        {
+            GameObject shape2 = Instantiate(redStarGameObject, shapePoint1);
+            shapeToDestroy2 = shape2;
+        }
+        
     }
 
     void ChangeText()

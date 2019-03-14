@@ -1002,6 +1002,16 @@ MonoBehaviour:
   timeIncrement: 0.2
   score: 0
   slidey: {fileID: 1599365746}
+  blueSquareGameObject: {fileID: 0}
+  blueCircleGameObject: {fileID: 0}
+  blueTriangleGameObject: {fileID: 0}
+  blueStarGameObject: {fileID: 0}
+  redSquareGameObject: {fileID: 0}
+  redCircleGameObject: {fileID: 0}
+  redTriangleGameObject: {fileID: 0}
+  redStarGameObject: {fileID: 0}
+  shapePoint1: {fileID: 0}
+  shapePoint2: {fileID: 0}
 --- !u!4 &1699135864
 Transform:
   m_ObjectHideFlags: 0

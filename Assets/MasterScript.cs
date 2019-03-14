@@ -97,7 +97,7 @@ public class MasterScript : MonoBehaviour
 
         }
 
-        NewShapes(); 
+        //NewShapes(); 
     }
 
     void ControlerOneInputCheck(){
