@@ -6,6 +6,14 @@ using UnityEngine.UI;
 public class MasterScript : MonoBehaviour
 {
     public string testing;
+
+    public int health = 3;
+    private float timePerAction;
+    public float maxTimePerAction;
+    public float minTimePerAction;
+    public float timeIncrement;
+    public int score;
+    public Slider slidey;
     // controler side one active buttions
     public KeyCode[] controlerOneArray  = {KeyCode.Joystick1Button0, KeyCode.Joystick1Button1,KeyCode.Joystick1Button2,KeyCode.Joystick1Button3 };
     // controler two acctive buttions 
@@ -30,10 +38,14 @@ public class MasterScript : MonoBehaviour
     private void Start()
     {
         // call on start 
-        NewShapes(); 
+        NewShapes();
+        timePerAction = maxTimePerAction;
     }
     void Update(){
         bool completedCheck = false;
+        timePerAction -= Time.deltaTime;
+        slidey.maxValue = maxTimePerAction;
+        slidey.value = timePerAction;
         for( int i =0; i < shapeIndex.Length; i ++){
 
             // if the key is active
@@ -76,8 +88,15 @@ public class MasterScript : MonoBehaviour
         Debug.Log(finalIndex);
         // checks the active indexes againt the one need 
         if (completedCheck && finalIndex == index[1]){
+            score += 100;
             ClearShapes(); // shapes rest score and health ++ ? 
 
+        }
+
+        if (timePerAction <= 0)
+        {
+            health--;
+            ClearShapes();
         }
         
             
@@ -111,7 +130,21 @@ public class MasterScript : MonoBehaviour
             Destroy(created[i]);
 
         }
+        timePerAction = maxTimePerAction;
+        if (maxTimePerAction > minTimePerAction)
+        {
+            maxTimePerAction -= timeIncrement;
+        }
 
-        //NewShapes(); 
+        NewShapes(); 
+    }
+    
+    private void OnGUI()
+    {
+        //GUI.Label(new Rect(10, 10, 1000, 20), actionToDisplay + " " + buttonPressString);
+        GUI.Label(new Rect(10, 30, 1000, 20), "Time: "+ maxTimePerAction.ToString("F2"));
+        GUI.Label(new Rect(10, 50, 1000, 20), "Health: "+ health);
+        GUI.Label(new Rect(10, 70, 1000, 20), "Score: "+ score);
+        //GUI.Label(new Rect(10, 90, 1000, 20), buttonString1 + " " + buttonString2);
     }
 }
