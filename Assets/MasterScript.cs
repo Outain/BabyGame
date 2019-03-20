@@ -35,13 +35,20 @@ public class MasterScript : MonoBehaviour
     int controlerTwo = 5; 
     // for testing purposes 
     public KeyCode testingButtions;
+    public Image hourGlassBottom, hourGlassTop;
+    public float hourGlassFillAmount;
     private void Start()
     {
         // call on start 
         NewShapes();
         timePerAction = maxTimePerAction;
     }
-    void Update(){
+    void Update()
+    {
+        hourGlassFillAmount = (maxTimePerAction - timePerAction) / maxTimePerAction;
+        print(hourGlassFillAmount);
+        hourGlassBottom.fillAmount = hourGlassFillAmount;
+        hourGlassTop.fillAmount = (1 - hourGlassFillAmount);
         bool completedCheck = false;
         timePerAction -= Time.deltaTime;
         slidey.maxValue = maxTimePerAction;
