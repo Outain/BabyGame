@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="InputScript.cs" t="Include" />
         <e p="MasterScript.cs" t="Include" />
+        <e p="MenuScript.cs" t="Include" />
       </e>
       <e p="BabyGame.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
