@@ -112,8 +112,8 @@ public class MasterScript : MonoBehaviour
     }
     // calls new shaped to be used for the next index check 
     void NewShapes(){
-
-        for(int i =0; i < index.Length; i ++){
+        Audio.AudioMaster.PlayAudioClipBackGround(0);
+        for (int i =0; i < index.Length; i ++){
             index[0] = Random.Range(0, shapeIndex.Length);
         }
         // if index is the same retry untill its not :) 
@@ -143,6 +143,10 @@ public class MasterScript : MonoBehaviour
         if (maxTimePerAction > minTimePerAction)
         {
             maxTimePerAction -= timeIncrement;
+            float sendToAudio = 1;
+            sendToAudio = (float) Mathf.Abs((1 / maxTimePerAction) - (maxTimePerAction * 0.2f));
+            Audio.AudioMaster.timeBetweenShiftChanges = sendToAudio;
+            Audio.AudioMaster.audioPitchChange = 1 / maxTimePerAction; 
         }
 
         NewShapes(); 
