@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI; 
 
 public class MasterScript : MonoBehaviour
@@ -105,7 +106,8 @@ public class MasterScript : MonoBehaviour
             health--;
             ClearShapes();
         }
-        
+
+      
             
     }
     // calls new shaped to be used for the next index check 
@@ -154,4 +156,6 @@ public class MasterScript : MonoBehaviour
         GUI.Label(new Rect(10, 70, 1000, 20), "Score: "+ score);
         //GUI.Label(new Rect(10, 90, 1000, 20), buttonString1 + " " + buttonString2);
     }
+
+    
 }
