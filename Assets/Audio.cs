@@ -24,7 +24,7 @@ public class Audio : MonoBehaviour
     }
     public void PlayAudioClipBackGround(int x = 0)
     {
-        Debug.Log("Working");
+       // Debug.Log("Working");
         audioSourseBackGround.clip = audioClipBackGround[x];
         audioSourseBackGround.Play();
         audioSourseBackGround.pitch = 1f;

@@ -38,37 +38,53 @@ public class MasterScript : MonoBehaviour
     public KeyCode testingButtions;
     public Image hourGlassBottom, hourGlassTop;
     public float hourGlassFillAmount;
-    private void Start()
+
+    void Awake()
     {
-        // call on start 
-        NewShapes();
         timePerAction = maxTimePerAction;
     }
-    void Update()
+    private void Start()
+    {
+        StartCoroutine(Initialiser());
+
+    }
+    private void Update()
     {
         hourGlassFillAmount = (maxTimePerAction - timePerAction) / maxTimePerAction;
-        print(hourGlassFillAmount);
+        //print(hourGlassFillAmount);
         hourGlassBottom.fillAmount = hourGlassFillAmount;
         hourGlassTop.fillAmount = (1 - hourGlassFillAmount);
         bool completedCheck = false;
         timePerAction -= Time.deltaTime;
         slidey.maxValue = maxTimePerAction;
         slidey.value = timePerAction;
+        if (Input.GetKey(KeyCode.K))
+        {
+            
+            Debug.Log("Inputworking");
+        }
+        
         for( int i =0; i < shapeIndex.Length; i ++){
 
             // if the key is active
             // check if block in in place (blocks are in order of array )
             if(Input.GetKey(controlerOneArray[i]))
             {
-
+             Debug.Log(i);
+             //Debug.Log("Testing working");
                 if (i == index[0]){
+                    Debug.Log("Yep This One");
                     completedCheck = true; 
+                    
+                    
 
                 } 
 
                 
             }
         }
+        
+        
 
 
         // check the axis input, each axis is -1 to 1 and coraspond to a index number 
@@ -93,10 +109,11 @@ public class MasterScript : MonoBehaviour
             finalIndex = 5;
         }
 
-        Debug.Log(finalIndex);
+        //Debug.Log(finalIndex);
         // checks the active indexes againt the one need 
-        if (completedCheck && finalIndex == index[1]){
+        if (completedCheck){
             score += 100;
+            Debug.Log("GG");
             ClearShapes(); // shapes rest score and health ++ ? 
 
         }
@@ -161,5 +178,11 @@ public class MasterScript : MonoBehaviour
         //GUI.Label(new Rect(10, 90, 1000, 20), buttonString1 + " " + buttonString2);
     }
 
-    
+    IEnumerator Initialiser()
+    {
+        
+        yield return new WaitForSeconds(0.05f);
+        
+        NewShapes();
+    }   
 }

@@ -6,6 +6,7 @@
     <e p="D:\unity work\BabyGame" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Audio.cs" t="Include" />
         <e p="GameOverScript.cs" t="Include" />
         <e p="InputScript.cs" t="Include" />
         <e p="MasterScript.cs" t="Include" />
