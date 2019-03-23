@@ -73,7 +73,8 @@ public class MasterScript : MonoBehaviour
              Debug.Log(i);
              //Debug.Log("Testing working");
                 if (i == index[0]){
-                    Debug.Log("Yep This One");
+                    //Debug.Log("Yep This One");
+                    // this code is working with a basic controler 
                     completedCheck = true; 
                     
                     
@@ -113,7 +114,8 @@ public class MasterScript : MonoBehaviour
         // checks the active indexes againt the one need 
         if (completedCheck){
             score += 100;
-            Debug.Log("GG");
+            //Debug.Log("GG");
+            // this code is also working with a basic controler 
             ClearShapes(); // shapes rest score and health ++ ? 
 
         }
@@ -178,11 +180,12 @@ public class MasterScript : MonoBehaviour
         //GUI.Label(new Rect(10, 90, 1000, 20), buttonString1 + " " + buttonString2);
     }
 
+    float timeBeforeStart = 2f; 
     IEnumerator Initialiser()
     {
         
-        yield return new WaitForSeconds(0.05f);
-        
-        NewShapes();
+        yield return new WaitForSeconds(timeBeforeStart);
+        ClearShapes();
+        //NewShapes();
     }   
 }

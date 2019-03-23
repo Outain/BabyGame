@@ -1271,13 +1271,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSourseBackGround: {fileID: 2022768683}
   audioSourseFX: {fileID: 2022768684}
-  audioPitchChange: 0.2
+  audioPitchChange: 0.05
   timeBetweenShiftChanges: 0.2
   audioClip:
   - {fileID: 8300000, guid: d08f52bbf5b0d244b8e531b83075a81d, type: 3}
   - {fileID: 0}
   audioClipBackGround:
-  - {fileID: 8300000, guid: 30ba00272a04bba419f727f6669bf03e, type: 3}
+  - {fileID: 8300000, guid: cafc95972aca0f94086ffda01b375965, type: 3}
   - {fileID: 8300000, guid: 53fb1130fb7feab41b38eda1576d2a5a, type: 3}
   - {fileID: 8300000, guid: 7315ab7580d5d224b927d8405395f54e, type: 3}
   - {fileID: 8300000, guid: 30ba00272a04bba419f727f6669bf03e, type: 3}

@@ -24,7 +24,9 @@ public class Audio : MonoBehaviour
     }
     public void PlayAudioClipBackGround(int x = 0)
     {
-       // Debug.Log("Working");
+        // Debug.Log("Working");
+        //always reset the invoke here 
+        CancelInvoke();
         audioSourseBackGround.clip = audioClipBackGround[x];
         audioSourseBackGround.Play();
         audioSourseBackGround.pitch = 1f;
@@ -33,11 +35,7 @@ public class Audio : MonoBehaviour
 
             InvokeRepeating("ToneShift", timeBetweenShiftChanges, timeBetweenShiftChanges);
         }
-        else
-        {
-            CancelInvoke();
 
-        }
     }
     void ToneShift(){
 
