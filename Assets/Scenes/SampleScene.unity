@@ -1274,8 +1274,14 @@ MonoBehaviour:
   audioPitchChange: 0.05
   timeBetweenShiftChanges: 0.2
   audioClip:
-  - {fileID: 8300000, guid: d08f52bbf5b0d244b8e531b83075a81d, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 10f901e5320e5084abab7c5e240038ff, type: 3}
+  - {fileID: 8300000, guid: 36d1a8c1ee757e242be1d61a4c172bb8, type: 3}
+  - {fileID: 8300000, guid: 5d33172a20401a044818d6aa63c14108, type: 3}
+  - {fileID: 8300000, guid: f0e19ec5feaa37e46b2ef2488a09bedf, type: 3}
+  - {fileID: 8300000, guid: d6b5dfefbf497e044838d789a4282fb9, type: 3}
+  - {fileID: 8300000, guid: b85935c74508cf94aac03cae2df79685, type: 3}
+  - {fileID: 8300000, guid: d5f62fcca79a2f3468d497da75401255, type: 3}
+  - {fileID: 8300000, guid: ab5540ba1f727de459c34077685f242e, type: 3}
   audioClipBackGround:
   - {fileID: 8300000, guid: cafc95972aca0f94086ffda01b375965, type: 3}
   - {fileID: 8300000, guid: 53fb1130fb7feab41b38eda1576d2a5a, type: 3}
