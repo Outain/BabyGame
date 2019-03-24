@@ -21,6 +21,7 @@ public class GameOverScript : MonoBehaviour
         if (ms.health <= 0)
         {
             ms.enabled = false;
+            Audio.AudioMaster.gameObject.SetActive(false);
             gameOverText.enabled = true;
         }
         

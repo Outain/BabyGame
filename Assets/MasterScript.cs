@@ -14,7 +14,7 @@ public class MasterScript : MonoBehaviour
     public float minTimePerAction;
     public float timeIncrement;
     public int score;
-    public Slider slidey;
+    //public Slider slidey;
     // controler side one active buttions
     public KeyCode[] controlerOneArray  = {KeyCode.Joystick1Button0, KeyCode.Joystick1Button1,KeyCode.Joystick1Button2,KeyCode.Joystick1Button3 };
     // controler two acctive buttions 
@@ -38,7 +38,7 @@ public class MasterScript : MonoBehaviour
     public KeyCode testingButtions;
     public Image hourGlassBottom, hourGlassTop;
     public float hourGlassFillAmount;
-
+    private bool initialised=false; //using this to make sure time is only incremented after first shapes and not before.
     void Awake()
     {
         timePerAction = maxTimePerAction;
@@ -56,8 +56,8 @@ public class MasterScript : MonoBehaviour
         hourGlassTop.fillAmount = (1 - hourGlassFillAmount);
         bool completedCheck = false;
         timePerAction -= Time.deltaTime;
-        slidey.maxValue = maxTimePerAction;
-        slidey.value = timePerAction;
+        //slidey.maxValue = maxTimePerAction;
+       // slidey.value = timePerAction;
         if (Input.GetKey(KeyCode.K))
         {
             
@@ -161,7 +161,11 @@ public class MasterScript : MonoBehaviour
         timePerAction = maxTimePerAction;
         if (maxTimePerAction > minTimePerAction)
         {
-            maxTimePerAction -= timeIncrement;
+            if (initialised)
+            {
+                maxTimePerAction -= timeIncrement;
+            }
+
             float sendToAudio = 1;
             sendToAudio = (float) Mathf.Abs((1 / maxTimePerAction) - (maxTimePerAction * 0.2f));
             Audio.AudioMaster.timeBetweenShiftChanges = sendToAudio;
@@ -183,9 +187,13 @@ public class MasterScript : MonoBehaviour
     float timeBeforeStart = 2f; 
     IEnumerator Initialiser()
     {
-        
+        hourGlassTop.gameObject.SetActive(false);
+        hourGlassBottom.gameObject.SetActive(false);
         yield return new WaitForSeconds(timeBeforeStart);
+        hourGlassTop.gameObject.SetActive(true);
+        hourGlassBottom.gameObject.SetActive(true);
         ClearShapes();
+        initialised = true;
         //NewShapes();
     }   
 }

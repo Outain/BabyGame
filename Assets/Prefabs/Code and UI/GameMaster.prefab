@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5424877455439814452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5424877455439814454}
+  - component: {fileID: 5424877455439814455}
+  - component: {fileID: 5424877455439814449}
+  m_Layer: 0
+  m_Name: GameMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5424877455439814454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424877455439814452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 980.8031, y: 548.181, z: 22.25619}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5424877455439814455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424877455439814452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e06ab968fa8917b4d8073166836c65ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testing: 
+  health: 3
+  maxTimePerAction: 10
+  minTimePerAction: 6
+  timeIncrement: 0.2
+  score: 0
+  slidey: {fileID: 0}
+  controlerOneArray: 5e0100005f0100006001000061010000
+  controlerTwoArray: 6a0100006b0100006c0100006d010000
+  shapeIndex:
+  - {fileID: 2806957795523783760, guid: 6c3247cc5221ae845a5c786921dee681, type: 3}
+  - {fileID: 4196053587507830636, guid: 1779210a6c0cc3741a08b8f62797940c, type: 3}
+  - {fileID: 4390832912430780618, guid: ccb622fbe744e494cb05b618ad027479, type: 3}
+  - {fileID: 4462619132620511053, guid: 0b4f5202d545a5641ab277a7199b9615, type: 3}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  colors:
+  - {r: 0, g: 0.56314373, b: 1, a: 1}
+  - {r: 1, g: 0.5896226, b: 0.98676676, a: 1}
+  testingButtions: 330
+  hourGlassBottom: {fileID: 0}
+  hourGlassTop: {fileID: 0}
+  hourGlassFillAmount: 0
+--- !u!114 &5424877455439814449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424877455439814452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ea419b71a4b9e489d0fdf5569f303b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ms: {fileID: 5424877455439814455}
+  gameOverText: {fileID: 0}
