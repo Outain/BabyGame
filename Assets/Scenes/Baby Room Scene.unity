@@ -840,6 +840,56 @@ PrefabInstance:
       propertyPath: health
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: controlerOneArray.Array.data[2]
+      value: 353
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: controlerOneArray.Array.data[3]
+      value: 352
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: controlerTwoArray.Array.data[0]
+      value: 363
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: controlerTwoArray.Array.data[2]
+      value: 362
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: controlerTwoArray.Array.data[1]
+      value: 361
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: pinkCheck.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: pinkCheck.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: pinkCheck.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: pinkCheck.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: maxTimePerAction
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5424877455439814449, guid: 75770bd970b3e5b4787a63d50800bf45,
         type: 3}
       propertyPath: gameOverText

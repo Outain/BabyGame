@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41816fbf-a6eb-46b8-9b36-696d54cb65d6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BabyGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BabyGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameOverScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameOverScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MasterScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MasterScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Baby Room Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Baby Room Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,44 +14,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/MasterScript.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="905">
-              <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
+            <state relative-caret-position="248">
+              <caret line="119" column="29" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
               <folding>
-                <marker date="1553457376146" expanded="true" signature="6:135" ph="..." />
-                <marker date="1553457376146" expanded="true" signature="179:6282" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="398:463" ph="/* public Slider slidey; ... */" />
-                <marker date="1553457376146" expanded="true" signature="1602:1656" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="1681:1733" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="1759:3929" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="2094:2171" ph="/* slidey.maxValue = maxTimePerAction; ... */" />
-                <marker date="1553457376146" expanded="true" signature="2208:2280" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="2341:2891" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="2356:2453" ph="/* if the key is active ... */" />
-                <marker date="1553457376146" expanded="true" signature="2504:2881" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="2625:2848" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="2647:2743" ph="/* Debug.Log(&quot;Yep This One&quot;); ... */" />
-                <marker date="1553457376146" expanded="true" signature="3196:3235" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="3261:3300" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="3326:3365" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="3390:3429" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="3429:3481" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="3491:3573" ph="/* Debug.Log(finalIndex); ... */" />
-                <marker date="1553457376146" expanded="true" signature="3601:3800" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="3641:3724" ph="/* Debug.Log(&quot;GG&quot;); ... */" />
-                <marker date="1553457376146" expanded="true" signature="3833:3902" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="4011:4718" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="4113:4183" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="4301:4371" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="4417:4679" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="4805:5423" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="4855:4901" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="4992:5394" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="5031:5110" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="5453:5865" ph="{...}" />
-                <marker date="1553457376146" expanded="true" signature="5929:6277" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="6:135" ph="..." />
+                <marker date="1553523879103" expanded="true" signature="179:6555" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="438:503" ph="/* public Slider slidey; ... */" />
+                <marker date="1553523879103" expanded="true" signature="1642:1696" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="1721:1773" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="1799:4202" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="2134:2211" ph="/* slidey.maxValue = maxTimePerAction; ... */" />
+                <marker date="1553523879103" expanded="true" signature="2248:2320" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="2381:2931" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="2396:2493" ph="/* if the key is active ... */" />
+                <marker date="1553523879103" expanded="true" signature="2544:2921" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="2665:2888" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="2687:2783" ph="/* Debug.Log(&quot;Yep This One&quot;); ... */" />
+                <marker date="1553523879103" expanded="true" signature="3145:3210" ph="/* Debug.Log(horz + &quot; &quot; + vert); ... */" />
+                <marker date="1553523879103" expanded="true" signature="3286:3336" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="3384:3434" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="3484:3534" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="3580:3630" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="3630:3682" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="3874:4073" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="3914:3997" ph="/* Debug.Log(&quot;GG&quot;); ... */" />
+                <marker date="1553523879103" expanded="true" signature="4106:4175" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="4284:4991" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="4386:4456" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="4574:4644" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="4690:4952" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="5078:5696" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="5128:5174" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="5265:5667" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="5304:5383" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="5726:6138" ph="{...}" />
+                <marker date="1553523879103" expanded="true" signature="6202:6550" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -81,7 +78,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/GameOverScript.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="394">
@@ -206,8 +203,8 @@
         <option value="$PROJECT_DIR$/Assets/InputScript.cs" />
         <option value="$PROJECT_DIR$/Assets/MenuScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Audio.cs" />
-        <option value="$PROJECT_DIR$/Assets/MasterScript.cs" />
         <option value="$PROJECT_DIR$/Assets/GameOverScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/MasterScript.cs" />
       </list>
     </option>
   </component>
@@ -240,6 +237,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunDashboard">
@@ -279,12 +277,12 @@
       <option name="presentableId" value="Default" />
       <updated>1552486948058</updated>
       <workItem from="1552486949293" duration="14141000" />
-      <workItem from="1553086735240" duration="10252000" />
+      <workItem from="1553086735240" duration="12711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24393000" />
+    <option name="totallyTimeSpent" value="26852000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -425,47 +423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/MasterScript.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="905">
-          <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
-          <folding>
-            <marker date="1553457376146" expanded="true" signature="6:135" ph="..." />
-            <marker date="1553457376146" expanded="true" signature="179:6282" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="398:463" ph="/* public Slider slidey; ... */" />
-            <marker date="1553457376146" expanded="true" signature="1602:1656" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="1681:1733" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="1759:3929" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="2094:2171" ph="/* slidey.maxValue = maxTimePerAction; ... */" />
-            <marker date="1553457376146" expanded="true" signature="2208:2280" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="2341:2891" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="2356:2453" ph="/* if the key is active ... */" />
-            <marker date="1553457376146" expanded="true" signature="2504:2881" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="2625:2848" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="2647:2743" ph="/* Debug.Log(&quot;Yep This One&quot;); ... */" />
-            <marker date="1553457376146" expanded="true" signature="3196:3235" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="3261:3300" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="3326:3365" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="3390:3429" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="3429:3481" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="3491:3573" ph="/* Debug.Log(finalIndex); ... */" />
-            <marker date="1553457376146" expanded="true" signature="3601:3800" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="3641:3724" ph="/* Debug.Log(&quot;GG&quot;); ... */" />
-            <marker date="1553457376146" expanded="true" signature="3833:3902" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="4011:4718" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="4113:4183" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="4301:4371" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="4417:4679" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="4805:5423" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="4855:4901" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="4992:5394" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="5031:5110" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="5453:5865" ph="{...}" />
-            <marker date="1553457376146" expanded="true" signature="5929:6277" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Audio.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -497,6 +454,47 @@
             <marker date="1553457611233" expanded="true" signature="424:576" ph="{...}" />
             <marker date="1553457611233" expanded="true" signature="629:675" ph="{...}" />
             <marker date="1553457611233" expanded="true" signature="716:825" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/MasterScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="119" column="29" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
+          <folding>
+            <marker date="1553523879103" expanded="true" signature="6:135" ph="..." />
+            <marker date="1553523879103" expanded="true" signature="179:6555" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="438:503" ph="/* public Slider slidey; ... */" />
+            <marker date="1553523879103" expanded="true" signature="1642:1696" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="1721:1773" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="1799:4202" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="2134:2211" ph="/* slidey.maxValue = maxTimePerAction; ... */" />
+            <marker date="1553523879103" expanded="true" signature="2248:2320" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="2381:2931" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="2396:2493" ph="/* if the key is active ... */" />
+            <marker date="1553523879103" expanded="true" signature="2544:2921" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="2665:2888" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="2687:2783" ph="/* Debug.Log(&quot;Yep This One&quot;); ... */" />
+            <marker date="1553523879103" expanded="true" signature="3145:3210" ph="/* Debug.Log(horz + &quot; &quot; + vert); ... */" />
+            <marker date="1553523879103" expanded="true" signature="3286:3336" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="3384:3434" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="3484:3534" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="3580:3630" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="3630:3682" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="3874:4073" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="3914:3997" ph="/* Debug.Log(&quot;GG&quot;); ... */" />
+            <marker date="1553523879103" expanded="true" signature="4106:4175" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="4284:4991" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="4386:4456" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="4574:4644" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="4690:4952" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="5078:5696" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="5128:5174" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="5265:5667" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="5304:5383" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="5726:6138" ph="{...}" />
+            <marker date="1553523879103" expanded="true" signature="6202:6550" ph="{...}" />
           </folding>
         </state>
       </provider>

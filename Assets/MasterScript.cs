@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MasterScript : MonoBehaviour
 {
     public string testing;
-
+    public int[] pinkCheck = {0,1,2,3}; 
     public int health = 3;
     private float timePerAction;
     public float maxTimePerAction;
@@ -92,27 +92,32 @@ public class MasterScript : MonoBehaviour
         float horz = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
         //Debug.Log(horz + " " + vert);
+        //public int[] pinkcheck;
         int finalIndex = 5; 
-        
+        //right// square
         if( horz > 0){
-            finalIndex = 0;
+            finalIndex = pinkCheck[0];
         }
+        //left/ cycle
         else if(horz < 0){
-            finalIndex = 1;
+            finalIndex = pinkCheck[1];
         }
+        //u[// triangle
         else if(vert > 0){
-            finalIndex = 2;
+            finalIndex = pinkCheck[2];
         }
-        else if(vert <0){
-            finalIndex = 3;
+        //down star
+        else if(vert < 0){
+            finalIndex = pinkCheck[3];
         }
         else{
             finalIndex = 5;
         }
 
-        //Debug.Log(finalIndex);
+        //Debug.Log(horz);
+        Debug.Log(finalIndex + " , " +   index[1]);
         // checks the active indexes againt the one need 
-        if (completedCheck){
+        if (completedCheck && finalIndex == index[1]){
             score += 100;
             //Debug.Log("GG");
             // this code is also working with a basic controler 
