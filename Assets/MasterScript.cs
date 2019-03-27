@@ -139,7 +139,7 @@ public class MasterScript : MonoBehaviour
         if (timePerAction <= 0&&!waitingForShapes)
         {
             health--;
-            score += 550;
+            
             dataController.SubmitNewPlayerScore(score);
             StartCoroutine(ShapeDelay());
         }

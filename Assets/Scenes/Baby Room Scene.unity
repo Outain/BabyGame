@@ -1169,7 +1169,7 @@ PrefabInstance:
     - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
         type: 3}
       propertyPath: health
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
         type: 3}
@@ -1219,7 +1219,7 @@ PrefabInstance:
     - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
         type: 3}
       propertyPath: maxTimePerAction
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
         type: 3}
