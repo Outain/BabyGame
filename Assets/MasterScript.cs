@@ -14,7 +14,7 @@ public class MasterScript : MonoBehaviour
     public float minTimePerAction;
     public float timeIncrement;
     public float shapeChangeDelay;
-    public int score;
+    public int score,highScore;
     //public Slider slidey;
     // controler side one active buttions
     public KeyCode[] controlerOneArray  = {KeyCode.Joystick1Button0, KeyCode.Joystick1Button1,KeyCode.Joystick1Button2,KeyCode.Joystick1Button3 };
@@ -39,16 +39,24 @@ public class MasterScript : MonoBehaviour
     public KeyCode testingButtions;
     public Image hourGlassBottom, hourGlassTop;
     public float hourGlassFillAmount;
+    public Text livesText, scoreText,highScoreText, timeText;
     private bool initialised=false; //using this to make sure time is only incremented after first shapes and not before.
     private bool waitingForShapes;
+
+    private DataController dataController;
+    private PlayerProgress playerProgress;
     void Awake()
     {
         timePerAction = maxTimePerAction;
     }
     private void Start()
     {
+        dataController = GetComponent<DataController>();
+      
+        
         StartCoroutine(Initialiser());
-
+        
+        highScore = PlayerPrefs.GetInt("highestScore");
     }
     private void Update()
     {
@@ -121,6 +129,7 @@ public class MasterScript : MonoBehaviour
         // checks the active indexes againt the one need 
         if (completedCheck && finalIndex == index[1]){
             score += 100;
+            dataController.SubmitNewPlayerScore(score);
             //Debug.Log("GG");
             // this code is also working with a basic controler 
             StartCoroutine(ShapeDelay()); // shapes rest score and health ++ ? 
@@ -130,11 +139,13 @@ public class MasterScript : MonoBehaviour
         if (timePerAction <= 0&&!waitingForShapes)
         {
             health--;
+            score += 550;
+            dataController.SubmitNewPlayerScore(score);
             StartCoroutine(ShapeDelay());
         }
 
       
-            
+        UpdateUI();
     }
     // calls new shaped to be used for the next index check 
     void NewShapes(){
@@ -184,15 +195,23 @@ public class MasterScript : MonoBehaviour
 
         //NewShapes(); 
     }
-    
-    private void OnGUI()
+
+    void UpdateUI()
     {
-        //GUI.Label(new Rect(10, 10, 1000, 20), actionToDisplay + " " + buttonPressString);
-        GUI.Label(new Rect(10, 30, 1000, 20), "Time: "+ maxTimePerAction.ToString("F2"));
-        GUI.Label(new Rect(10, 50, 1000, 20), "Health: "+ health);
-        GUI.Label(new Rect(10, 70, 1000, 20), "Score: "+ score);
-        //GUI.Label(new Rect(10, 90, 1000, 20), buttonString1 + " " + buttonString2);
+        livesText.text = "Lives: " + health;
+        scoreText.text = "Score: " + score;
+        highScoreText.text = "High Score: " + highScore;
+        timeText.text = "Time: " + maxTimePerAction;
     }
+    
+//    private void OnGUI()
+//    {
+//        //GUI.Label(new Rect(10, 10, 1000, 20), actionToDisplay + " " + buttonPressString);
+//        GUI.Label(new Rect(10, 30, 1000, 20), "Time: "+ maxTimePerAction.ToString("F2"));
+//        GUI.Label(new Rect(10, 50, 1000, 20), "Health: "+ health);
+//        GUI.Label(new Rect(10, 70, 1000, 20), "Score: "+ score);
+//        //GUI.Label(new Rect(10, 90, 1000, 20), buttonString1 + " " + buttonString2);
+//    }
 
     float timeBeforeStart = 2f; 
     IEnumerator Initialiser()
@@ -212,7 +231,11 @@ public class MasterScript : MonoBehaviour
         waitingForShapes = true;
         ClearShapes();
        yield return new WaitForSeconds(shapeChangeDelay);
-       NewShapes();
+       if (health > 0)
+       {
+           NewShapes();
+       }
+
        waitingForShapes = false;
     }
 }
