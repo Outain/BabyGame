@@ -13,6 +13,7 @@ public class MasterScript : MonoBehaviour
     public float maxTimePerAction;
     public float minTimePerAction;
     public float timeIncrement;
+    public float shapeChangeDelay;
     public int score;
     //public Slider slidey;
     // controler side one active buttions
@@ -39,6 +40,7 @@ public class MasterScript : MonoBehaviour
     public Image hourGlassBottom, hourGlassTop;
     public float hourGlassFillAmount;
     private bool initialised=false; //using this to make sure time is only incremented after first shapes and not before.
+    private bool waitingForShapes;
     void Awake()
     {
         timePerAction = maxTimePerAction;
@@ -121,14 +123,14 @@ public class MasterScript : MonoBehaviour
             score += 100;
             //Debug.Log("GG");
             // this code is also working with a basic controler 
-            ClearShapes(); // shapes rest score and health ++ ? 
+            StartCoroutine(ShapeDelay()); // shapes rest score and health ++ ? 
 
         }
 
-        if (timePerAction <= 0)
+        if (timePerAction <= 0&&!waitingForShapes)
         {
             health--;
-            ClearShapes();
+            StartCoroutine(ShapeDelay());
         }
 
       
@@ -136,6 +138,8 @@ public class MasterScript : MonoBehaviour
     }
     // calls new shaped to be used for the next index check 
     void NewShapes(){
+        timePerAction = maxTimePerAction;
+        
         Audio.AudioMaster.PlayAudioClipBackGround(0);
         for (int i =0; i < index.Length; i ++){
             index[0] = Random.Range(0, shapeIndex.Length);
@@ -156,14 +160,15 @@ public class MasterScript : MonoBehaviour
     } 
 
     // clears old shapes and starts the new spawning section 
-    void ClearShapes(){
-
+    void ClearShapes()
+    {
+        
         for( int i =0; i <created.Length; i ++){
 
             Destroy(created[i]);
 
         }
-        timePerAction = maxTimePerAction;
+        
         if (maxTimePerAction > minTimePerAction)
         {
             if (initialised)
@@ -177,7 +182,7 @@ public class MasterScript : MonoBehaviour
             Audio.AudioMaster.audioPitchChange = 1 / maxTimePerAction; 
         }
 
-        NewShapes(); 
+        //NewShapes(); 
     }
     
     private void OnGUI()
@@ -199,6 +204,15 @@ public class MasterScript : MonoBehaviour
         hourGlassBottom.gameObject.SetActive(true);
         ClearShapes();
         initialised = true;
-        //NewShapes();
-    }   
+        NewShapes();
+    }
+
+    IEnumerator ShapeDelay()
+    {
+        waitingForShapes = true;
+        ClearShapes();
+       yield return new WaitForSeconds(shapeChangeDelay);
+       NewShapes();
+       waitingForShapes = false;
+    }
 }
