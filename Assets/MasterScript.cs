@@ -47,6 +47,7 @@ public class MasterScript : MonoBehaviour
     private PlayerProgress playerProgress;
 
     public GameObject rattle, bottle, diaper;
+    public GameObject thoughtBubble;
 
     enum BabyWants
     {
@@ -68,6 +69,7 @@ public class MasterScript : MonoBehaviour
         StartCoroutine(Initialiser());
         
         highScore = PlayerPrefs.GetInt("highestScore");
+        ClearObjects();
         
     }
     private void Update()
@@ -216,10 +218,16 @@ public class MasterScript : MonoBehaviour
             Audio.AudioMaster.timeBetweenShiftChanges = sendToAudio;
             Audio.AudioMaster.audioPitchChange = 1 / maxTimePerAction; 
         }
-
+        ClearObjects();
         //NewShapes(); 
     }
 
+    void ClearObjects()
+    {
+        thoughtBubble.SetActive(false);
+        bottle.SetActive(false);
+        rattle.SetActive(false);
+    }
     void ChooseObject()
     {
         int i;
@@ -232,8 +240,7 @@ public class MasterScript : MonoBehaviour
         {
             currentWant = BabyWants.rattle;
         }
-        bottle.SetActive(false);
-        rattle.SetActive(false);
+        
         if (currentWant == BabyWants.bottle)
         {
             bottle.SetActive(true);
@@ -243,6 +250,7 @@ public class MasterScript : MonoBehaviour
         {
             rattle.SetActive(true);
         }
+        thoughtBubble.SetActive(true);
         
         
     }
