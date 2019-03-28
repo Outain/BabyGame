@@ -45,6 +45,17 @@ public class MasterScript : MonoBehaviour
 
     private DataController dataController;
     private PlayerProgress playerProgress;
+
+    public GameObject rattle, bottle, diaper;
+
+    enum BabyWants
+    {
+        bottle,
+        rattle
+        //,diaper
+    };
+
+    private BabyWants currentWant;
     void Awake()
     {
         timePerAction = maxTimePerAction;
@@ -57,6 +68,7 @@ public class MasterScript : MonoBehaviour
         StartCoroutine(Initialiser());
         
         highScore = PlayerPrefs.GetInt("highestScore");
+        
     }
     private void Update()
     {
@@ -151,7 +163,7 @@ public class MasterScript : MonoBehaviour
     bool audioType = false; 
     void NewShapes(){
         timePerAction = maxTimePerAction;
-        
+        ChooseObject();
         Audio.AudioMaster.PlayAudioClipBackGround(0);
         for (int i =0; i < index.Length; i ++){
             index[0] = Random.Range(0, shapeIndex.Length);
@@ -208,6 +220,32 @@ public class MasterScript : MonoBehaviour
         //NewShapes(); 
     }
 
+    void ChooseObject()
+    {
+        int i;
+        i = Random.Range(0, 2);
+        if (i == 0)
+        {
+            currentWant = BabyWants.bottle;
+        }
+        else if (i == 1)
+        {
+            currentWant = BabyWants.rattle;
+        }
+        bottle.SetActive(false);
+        rattle.SetActive(false);
+        if (currentWant == BabyWants.bottle)
+        {
+            bottle.SetActive(true);
+        }
+        
+        else if (currentWant == BabyWants.rattle)
+        {
+            rattle.SetActive(true);
+        }
+        
+        
+    }
     void UpdateUI()
     {
         livesText.text = "Lives: " + health;
