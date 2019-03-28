@@ -17,10 +17,10 @@ public class Audio : MonoBehaviour
     // list of items should be commented here for future Refrence
     public AudioClip[] audioClip, audioClipBackGround;
 
-    void PlayAudioClipFX(int x = 0){
+    public void PlayAudioClipFX(int x = 0){
         
 
-        audioSourseFX.PlayOneShot(audioClip[x]);
+        audioSourseFX.PlayOneShot(audioClip[x], 1f);
     }
     public void PlayAudioClipBackGround(int x = 0)
     {

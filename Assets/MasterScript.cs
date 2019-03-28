@@ -19,7 +19,7 @@ public class MasterScript : MonoBehaviour
     // controler side one active buttions
     public KeyCode[] controlerOneArray  = {KeyCode.Joystick1Button0, KeyCode.Joystick1Button1,KeyCode.Joystick1Button2,KeyCode.Joystick1Button3 };
     // controler two acctive buttions 
-    public KeyCode[] controlerTwoArray = { KeyCode.Joystick1Button12, KeyCode.Joystick1Button13, KeyCode.Joystick1Button14, KeyCode.Joystick1Button15 };
+    // point less keep just in case :) public KeyCode[] controlerTwoArray = { KeyCode.Joystick1Button12, KeyCode.Joystick1Button13, KeyCode.Joystick1Button14, KeyCode.Joystick1Button15 };
     // index of shapes 
     public GameObject[] shapeIndex;
     // spsawn point for shapes 
@@ -132,7 +132,7 @@ public class MasterScript : MonoBehaviour
             dataController.SubmitNewPlayerScore(score);
             //Debug.Log("GG");
             // this code is also working with a basic controler 
-            StartCoroutine(ShapeDelay()); // shapes rest score and health ++ ? 
+            StartCoroutine(ShapeDelay(true)); // shapes rest score and health ++ ? 
 
         }
 
@@ -141,13 +141,14 @@ public class MasterScript : MonoBehaviour
             health--;
             
             dataController.SubmitNewPlayerScore(score);
-            StartCoroutine(ShapeDelay());
+            StartCoroutine(ShapeDelay(false));
         }
 
       
         UpdateUI();
     }
-    // calls new shaped to be used for the next index check 
+    // calls new shaped to be used for the next index check
+    bool audioType = false; 
     void NewShapes(){
         timePerAction = maxTimePerAction;
         
@@ -171,8 +172,19 @@ public class MasterScript : MonoBehaviour
     } 
 
     // clears old shapes and starts the new spawning section 
-    void ClearShapes()
+    void ClearShapes(bool x)
     {
+        // the bool is used so it ether right or wrong :) 
+
+        if (x)
+        {
+            // corret ans
+            Audio.AudioMaster.GetComponent<Audio>().PlayAudioClipFX(1); // this is how to play audio mark :) 
+        }
+        else {
+            Audio.AudioMaster.GetComponent<Audio>().PlayAudioClipFX(2);
+        }
+
         
         for( int i =0; i <created.Length; i ++){
 
@@ -221,15 +233,15 @@ public class MasterScript : MonoBehaviour
         yield return new WaitForSeconds(timeBeforeStart);
         hourGlassTop.gameObject.SetActive(true);
         hourGlassBottom.gameObject.SetActive(true);
-        ClearShapes();
+        ClearShapes(true);
         initialised = true;
         NewShapes();
     }
 
-    IEnumerator ShapeDelay()
+    IEnumerator ShapeDelay(bool x)
     {
         waitingForShapes = true;
-        ClearShapes();
+        ClearShapes(x);
        yield return new WaitForSeconds(shapeChangeDelay);
        if (health > 0)
        {
