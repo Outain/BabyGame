@@ -328,7 +328,7 @@ public class MasterScript : MonoBehaviour
         livesText.text = "Lives: " + health;
         scoreText.text = "Score: " + score;
         highScoreText.text = "High Score: " + highScore;
-        timeText.text = "Time: " + maxTimePerAction;
+        timeText.text = "Time: " + Mathf.Round(maxTimePerAction*100f)/100f; //occasional bug caused imperfect rounding
     }
     
 //    private void OnGUI()
