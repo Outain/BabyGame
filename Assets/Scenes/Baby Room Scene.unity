@@ -1368,6 +1368,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 3eddebaa91b86864a8e67a871565d4b4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db735570b5ba2af41bc6c8c221df2bfc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eddebaa91b86864a8e67a871565d4b4, type: 3}
 --- !u!224 &1211229003 stripped
@@ -1647,6 +1651,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BabyCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 6618952149833669642, guid: a419c93c6a415484688d30c22c45ac33,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387363988252117332, guid: a419c93c6a415484688d30c22c45ac33,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 910841579, guid: a419c93c6a415484688d30c22c45ac33, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.03
@@ -1769,16 +1783,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f281336970c1d5744bf1fcdcce8e39db, type: 2}
-    - target: {fileID: 6618952149833669642, guid: a419c93c6a415484688d30c22c45ac33,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387363988252117332, guid: a419c93c6a415484688d30c22c45ac33,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a419c93c6a415484688d30c22c45ac33, type: 3}
 --- !u!1001 &1532603560
@@ -1926,7 +1930,7 @@ PrefabInstance:
     - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
         type: 3}
       propertyPath: maxTimePerAction
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
         type: 3}
@@ -1988,6 +1992,16 @@ PrefabInstance:
       propertyPath: sadHead
       value: 
       objectReference: {fileID: 60817318}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: minTimePerAction
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424877455439814455, guid: 75770bd970b3e5b4787a63d50800bf45,
+        type: 3}
+      propertyPath: timeIncrement
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5424877455439814449, guid: 75770bd970b3e5b4787a63d50800bf45,
         type: 3}
       propertyPath: gameOverText

@@ -82,14 +82,13 @@ public class MasterScript : MonoBehaviour
         hourGlassBottom.fillAmount = hourGlassFillAmount;
         hourGlassTop.fillAmount = (1 - hourGlassFillAmount);
         bool completedCheck = false;
-        timePerAction -= Time.deltaTime;
+        if (!waitingForShapes)
+        {
+            timePerAction -= Time.deltaTime;
+        }
         //slidey.maxValue = maxTimePerAction;
        // slidey.value = timePerAction;
-        if (Input.GetKey(KeyCode.K))
-        {
-            
-            Debug.Log("Inputworking");
-        }
+
         
         for( int i =0; i < shapeIndex.Length; i ++){
 
@@ -144,7 +143,9 @@ public class MasterScript : MonoBehaviour
         //Debug.Log(horz);
         Debug.Log(finalIndex + " , " +   index[1]);
         // checks the active indexes againt the one need 
-        if (completedCheck && finalIndex == index[1]){
+        if (completedCheck && finalIndex == index[1] && !waitingForShapes)
+        {
+            waitingForShapes = true;
             score += 100;
             CompletedSoundEffect();
             dataController.SubmitNewPlayerScore(score);
@@ -155,8 +156,9 @@ public class MasterScript : MonoBehaviour
 
         }
 
-        if (timePerAction <= 0&&!waitingForShapes)
+        if (timePerAction <= 0 && !waitingForShapes)
         {
+            waitingForShapes = true;
             health--;
             dataController.SubmitNewPlayerScore(score);
             StartCoroutine(ShapeDelay(false));
@@ -223,6 +225,10 @@ public class MasterScript : MonoBehaviour
             sendToAudio = (float) Mathf.Abs((1 / maxTimePerAction) - (maxTimePerAction * 0.2f));
             Audio.AudioMaster.timeBetweenShiftChanges = sendToAudio;
             Audio.AudioMaster.audioPitchChange = 1 / maxTimePerAction; 
+        }
+        else if (maxTimePerAction >= 3.5f)
+        {
+            maxTimePerAction -= 0.05f;
         }
         ClearObjects();
         //NewShapes(); 
@@ -355,11 +361,13 @@ public class MasterScript : MonoBehaviour
 
     IEnumerator ShapeDelay(bool x)
     {
-        waitingForShapes = true;
+        //waitingForShapes = true;
         ClearShapes(x);
        yield return new WaitForSeconds(shapeChangeDelay);
        if (health > 0)
        {
+           
+           Debug.Log("Woking");
            NewShapes();
        }
 
