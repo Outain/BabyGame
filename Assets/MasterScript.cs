@@ -46,14 +46,17 @@ public class MasterScript : MonoBehaviour
     private DataController dataController;
     private PlayerProgress playerProgress;
 
-    public GameObject rattle, bottle, diaper;
+    public GameObject rattle, bottle, nappy,sleep;
     public GameObject thoughtBubble;
+
+    public GameObject happyHead, sadHead;
 
     enum BabyWants
     {
         bottle,
-        rattle
-        //,diaper
+        rattle,
+        nappy,
+        sleep
     };
 
     private BabyWants currentWant;
@@ -143,7 +146,9 @@ public class MasterScript : MonoBehaviour
         // checks the active indexes againt the one need 
         if (completedCheck && finalIndex == index[1]){
             score += 100;
+            CompletedSoundEffect();
             dataController.SubmitNewPlayerScore(score);
+            HappyFace();
             //Debug.Log("GG");
             // this code is also working with a basic controler 
             StartCoroutine(ShapeDelay(true)); // shapes rest score and health ++ ? 
@@ -153,7 +158,6 @@ public class MasterScript : MonoBehaviour
         if (timePerAction <= 0&&!waitingForShapes)
         {
             health--;
-            
             dataController.SubmitNewPlayerScore(score);
             StartCoroutine(ShapeDelay(false));
         }
@@ -183,6 +187,8 @@ public class MasterScript : MonoBehaviour
 
 
         lastIndex = index[1];
+        
+        SadFace();
     } 
 
     // clears old shapes and starts the new spawning section 
@@ -227,11 +233,13 @@ public class MasterScript : MonoBehaviour
         thoughtBubble.SetActive(false);
         bottle.SetActive(false);
         rattle.SetActive(false);
+        nappy.SetActive(false);
+        sleep.SetActive(false);
     }
     void ChooseObject()
     {
         int i;
-        i = Random.Range(0, 2);
+        i = Random.Range(0, 4);
         if (i == 0)
         {
             currentWant = BabyWants.bottle;
@@ -240,19 +248,80 @@ public class MasterScript : MonoBehaviour
         {
             currentWant = BabyWants.rattle;
         }
+        else if (i == 2)
+        {
+            currentWant = BabyWants.nappy;
+        }
+        else if (i == 3)
+        {
+            currentWant = BabyWants.sleep;
+        }
         
         if (currentWant == BabyWants.bottle)
         {
             bottle.SetActive(true);
+            
         }
         
         else if (currentWant == BabyWants.rattle)
         {
             rattle.SetActive(true);
+            
+        }
+        
+        else if (currentWant == BabyWants.nappy)
+        {
+            nappy.SetActive(true);
+            
+        }
+        
+        else if (currentWant == BabyWants.sleep)
+        {
+            sleep.SetActive(true);
+           
         }
         thoughtBubble.SetActive(true);
         
         
+    }
+
+    void HappyFace()
+    {
+        happyHead.SetActive(true);
+        sadHead.SetActive(false);
+    }
+
+    void SadFace()
+    {
+        sadHead.SetActive(true);
+        happyHead.SetActive(false);
+    }
+
+    void CompletedSoundEffect()
+    {
+        if (currentWant == BabyWants.bottle)
+        {
+           
+            Audio.AudioMaster.PlayAudioClipFX(0);
+        }
+        
+        else if (currentWant == BabyWants.rattle)
+        {
+           
+            Audio.AudioMaster.PlayAudioClipFX(5);
+        }
+        
+        else if (currentWant == BabyWants.nappy)
+        {
+            
+            Audio.AudioMaster.PlayAudioClipFX(3);
+        }
+        
+        else if (currentWant == BabyWants.sleep)
+        {
+            
+            Audio.AudioMaster.PlayAudioClipFX(4);
+        }
     }
     void UpdateUI()
     {
