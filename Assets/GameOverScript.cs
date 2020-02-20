@@ -22,7 +22,7 @@ public class GameOverScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ms.health <= 0&&!gameOver)
+        if (ms.health <= 0 && !gameOver)
         {
             print("Game Over");
             //dataController.SubmitNewPlayerScore(ms.score);
@@ -32,12 +32,6 @@ public class GameOverScript : MonoBehaviour
             Audio.AudioMaster.gameObject.SetActive(false);
             gameOverText.enabled = true;
             gameOver = true;
-        }
-        
-      
-        if (Input.GetKey(KeyCode.R))
-        {
-            ResetScene();
         }
     }
     

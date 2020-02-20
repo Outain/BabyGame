@@ -20,7 +20,7 @@ public class Audio : MonoBehaviour
     public void PlayAudioClipFX(int x = 0){
         
 
-        audioSourseFX.PlayOneShot(audioClip[x], 1f);
+        audioSourseFX.PlayOneShot(audioClip[x], 0.8f);
     }
     public void PlayAudioClipBackGround(int x = 0)
     {
